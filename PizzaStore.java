@@ -4,7 +4,18 @@
 // return menu
 
 public class PizzaStore { 
-    public void orderPizza(PizzaType type) {   
+
+    private String name;
+    private String address;
+    private String phoneNumber;
+
+    public static PizzaStore(String name, String address, String phoneNumber) {
+        this.name = name;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public static orderPizza(PizzaType type) {   
         Pizza pizza = PizzaFactory.PizzaOrder(type);
         pizza.prepare();
         pizza.bake();
