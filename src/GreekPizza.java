@@ -1,7 +1,7 @@
 public class GreekPizza implements Pizza {
     
     public GreekPizza() {
-        this.PizzaType = pizzaType.greek;
+        this.PizzaType = PizzaType.greek;
     }
     
     private PizzaType PizzaType;

@@ -1,13 +1,17 @@
 public class GlutenFreePizza implements Pizza {
     
     public GlutenFreePizza() {
-        this.PizzaType = glutenFree;
+        this.PizzaType = PizzaType.glutenFree;
     }
     
     private PizzaType PizzaType;
 
     public void prepare() {
         System.out.println("Preparing a pizza with gluten-free crust and toppings.");
+    }
+
+    public void bake() {
+        System.out.println("Baking the" + this.PizzaType + " pizza at 350 degrees for 25 minutes.");
     }
 
     public void cut() {

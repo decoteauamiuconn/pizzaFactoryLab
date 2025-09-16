@@ -1,13 +1,17 @@
 public class VeganPizza implements Pizza {
     
     public VeganPizza() {
-        this.PizzaType = pizzaType.vegan;
+        this.PizzaType = PizzaType.vegan;
     }
     
     private PizzaType PizzaType;
 
     public void prepare() {
         System.out.println("Preparing a pizza with vegan cheese and vegetables.");
+    }
+
+    public void bake() {
+        System.out.println("Baking the" + this.PizzaType + " pizza at 350 degrees for 25 minutes.");
     }
 
     public void cut() {

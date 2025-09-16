@@ -1,13 +1,17 @@
 public class MushroomPizza implements Pizza {
     
     public MushroomPizza() {
-        this.PizzaType = pizzaType.mushroom;
+        this.PizzaType = PizzaType.mushroom;
     }
     
     private PizzaType PizzaType;
 
     public void prepare() {
         System.out.println("Preparing a pizza with mushrooms and cheese.");
+    }
+
+    public void bake() {
+        System.out.println("Baking the" + this.PizzaType + " pizza at 350 degrees for 25 minutes.");
     }
 
         public void cut() {

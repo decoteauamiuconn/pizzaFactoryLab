@@ -1,5 +1,5 @@
 public class PizzaFactory { //class not interface
-    public static PizzaOrder(PizzaType type) {
+    public static Pizza PizzaOrder(PizzaType type) {
         switch (type) { //define types elsewhere <- defined in PizzaType.java at 6:52 PM
             case cheese:
                 return new CheesePizza(); 

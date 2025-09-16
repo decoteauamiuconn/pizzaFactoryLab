@@ -1,13 +1,17 @@
 public class CheesePizza implements Pizza {
     
     public CheesePizza() {
-        this.PizzaType = pizzaType.cheese;
+        this.PizzaType = PizzaType.cheese;    
     }
     
     private PizzaType PizzaType;
 
     public void prepare() {
         System.out.println("Preparing a pizza with cheese.");
+    }
+
+    public void bake() {
+        System.out.println("Baking the" + this.PizzaType + " pizza at 350 degrees for 25 minutes.");
     }
 
     public void cut() {
