@@ -9,20 +9,31 @@ public class PizzaStore {
     private String address;
     private String phoneNumber;
 
-    public static PizzaStore(String name, String address, String phoneNumber) {
+    public PizzaStore(String name, String address, String phoneNumber) {
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
     }
 
-    public static orderPizza(PizzaType type) {   
+    public orderPizza(PizzaType type) {   
         Pizza pizza = PizzaFactory.PizzaOrder(type);
         pizza.prepare();
         pizza.bake();
         pizza.cut();
         pizza.box();
     }; //compare to each Pizzatype: ensure compatibility
-    public String getMenu() {
-        //return menu as a string. maybe run TranslatePizzaTypes and return?
-    }; 
+
+    public void getMenu() {
+    for (PizzaType type : PizzaType.values()) {
+    String formatted = type.name().substring(0, 1).toUpperCase() + type.name().substring(1) + " Pizza";
+    System.out.println(this.name + "serves the following types of pizza:" + formatted);
+}
+    }
+    
+
+
+    public void welcome(String name, String address, String phoneNumber) {
+        System.out.println("Welcome to " + this.name + " located at " + this.address + ". You can reach us at " + this.phoneNumber + ".");
+        getMenu();
+    }
 }

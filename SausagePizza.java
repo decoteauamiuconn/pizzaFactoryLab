@@ -9,6 +9,14 @@ public class SausagePizza implements Pizza {
     public void prepare() {
         System.out.println("Preparing a pizza with sausage and cheese.");
     }
+
+    public void cut() {
+        System.out.println("Cutting the" + this.PizzaType + " pizza into slices.");
+    }
+
+    public void box() {
+        System.out.println("Boxing the" + this.PizzaType + " pizza in official PizzaStore box.");
+    }
 }
 
 //errors raised when not used, so i'll probably have to translate after all
