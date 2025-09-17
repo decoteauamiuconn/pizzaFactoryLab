@@ -6,7 +6,13 @@
 import java.util.Scanner;
 
 public class PizzaStore {
+    private String name;
+
+    public PizzaStore(String name) {
+        this.name = name;
+    }
     
+    // which one of these ^ v goes first
 
     public static void main(String[] args) { //main method to run program; works similarly to "if __name__ == '__main__':" in Python
         Scanner scanner = new Scanner(System.in); 
@@ -15,8 +21,10 @@ public class PizzaStore {
         String name = scanner.nextLine();
 
         PizzaStore store = new PizzaStore(name);
-        System.out.println(store.getMenu()); //return menu; they now know what options they have
+        store.getMenu(); //return menu; they now know what options they have
 
+        System.out.print("Enter pizza type: "); //prompt user for pizza type
+        String pizzaTypeInput = scanner.nextLine().toLowerCase();
 
         try {
             PizzaType type = PizzaType.valueOf(pizzaTypeInput);
@@ -28,7 +36,7 @@ public class PizzaStore {
         scanner.close();
     }
 
-    public orderPizza(PizzaType type) {   
+    public void orderPizza(PizzaType type) {   //was previously implemented elsewhere and not here
         Pizza pizza = PizzaFactory.PizzaOrder(type);
         pizza.prepare();
         pizza.bake();
@@ -36,17 +44,19 @@ public class PizzaStore {
         pizza.box();
     }
 
-    public void getMenu() {
+    public String getMenu() {
+        StringBuilder menuBuilder = new StringBuilder();
+        menuBuilder.append(this.name).append(" serves the following types of pizza:\n");
         for (PizzaType type : PizzaType.values()) { //iterates through enum values in PizzaType.java
             String formatted = type.name().substring(0, 1).toUpperCase() + type.name().substring(1) + " Pizza";
-            System.out.println(this.name + "serves the following types of pizza:" + formatted);
+            menuBuilder.append(formatted).append("\n");
         }
+        String menu = menuBuilder.toString();
+        System.out.print(menu);
+        return menu;
     }
     
 
 
-    public void welcome(String name, String address, String phoneNumber) {
-        System.out.println("Welcome to " + this.name + " located at " + this.address + ". You can reach us at " + this.phoneNumber + ".");
-        getMenu();
-    }
+    //left in an outdated function
 }

@@ -1,5 +1,5 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class PizzaStoreTest {
 
@@ -14,10 +14,7 @@ public class PizzaStoreTest {
     @Test
     public void testOrderPizza() {
         PizzaStore store = new PizzaStore("Test Store 2");
-        // You may need to adjust this if orderPizza returns void
-        // Instead, test the side effects or refactor to return Pizza
-        // For example:
-        // Pizza pizza = store.orderPizza(PizzaType.CHEESE);
-        // assertEquals("Cheese Pizza", pizza.getType().toStringValue());
+        Pizza pizza = store.orderPizza(PizzaType.cheese);
+        assertTrue(pizza instanceof CheesePizza);
     }
 }

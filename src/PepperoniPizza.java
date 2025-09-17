@@ -11,14 +11,14 @@ public class PepperoniPizza implements Pizza {
     }
 
     public void bake() {
-        System.out.println("Baking the" + this.PizzaType + " pizza at 350 degrees for 25 minutes.");
+        System.out.println("Baking the " + this.PizzaType + " pizza at 350 degrees for 25 minutes.");
     }
 
         public void cut() {
-        System.out.println("Cutting the" + this.PizzaType + " pizza into slices.");
+        System.out.println("Cutting the " + this.PizzaType + " pizza into slices.");
     }
 
     public void box() {
-        System.out.println("Boxing the" + this.PizzaType + " pizza in official PizzaStore box.");
+        System.out.println("Boxing the " + this.PizzaType + " pizza in official PizzaStore box.");
     }
 }   

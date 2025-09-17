@@ -1,7 +1,7 @@
 public class CheesePizza implements Pizza {
     
     public CheesePizza() {
-        this.PizzaType = PizzaType.cheese;    
+        this.PizzaType = PizzaType.cheese;
     }
     
     private PizzaType PizzaType;

@@ -1,18 +1,22 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import static org.junit.Assert.assertTrue; //repeatedly added when sking copilot for help debugging
+import static org.junit.Assert.fail;
 
 public class PizzaFactoryTest {
 
     @Test
     public void testOrderMushroomPizza() {
-        Pizza pizza = PizzaFactory.PizzaOrder(PizzaType.greek);
-        assertTrue(pizza instanceof GreekPizza);
+        Pizza pizza = PizzaFactory.PizzaOrder(PizzaType.mushroom);
+        assertTrue(pizza instanceof MushroomPizza);
     }
 
     @Test
     public void testOffTheMenu() {
-        assertThrows(IllegalArgumentException.class, () -> {
+        try {
             PizzaFactory.PizzaOrder(null);
-        });
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            // Test passes
+        }
     }
 }
